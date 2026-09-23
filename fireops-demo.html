@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luvann FireOps | Prototipo</title>
+<style>
+:root{--bg:#081015;--panel:#101a20;--line:#203039;--text:#eef5f6;--muted:#9fb0b7;--accent:#ff5b4d;--ok:#4ed1a5;--blue:#6aa9ff}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#081015,#0b1419);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}.wrap{width:min(1180px,calc(100% - 28px));margin:auto}.top{position:sticky;top:0;z-index:10;background:#081015e8;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.top .wrap{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.08em}.brand span{color:var(--accent)}.badge{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.75rem}.hero{padding:54px 0 24px}.hero h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1;margin:8px 0 14px}.hero p{color:var(--muted);max-width:760px}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;padding-bottom:40px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.card h2{font-size:1rem;margin:0 0 16px}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.section-title small{color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:.78rem;color:var(--muted)}input,select,textarea{width:100%;background:#0a1217;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:11px;font:inherit}textarea{min-height:90px;resize:vertical}.people{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.person{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#0b1419}.person input{width:auto}.status{margin-left:auto;font-size:.7rem;color:var(--muted)}.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.btn{border:0;border-radius:9px;padding:12px 16px;font-weight:750;cursor:pointer}.primary{background:var(--accent);color:white}.secondary{background:#15242c;color:var(--text);border:1px solid var(--line)}.success{background:var(--ok);color:#04120d}.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.kpi{padding:16px;border:1px solid var(--line);border-radius:12px;background:#0b1419}.kpi strong{display:block;font-size:1.8rem;color:var(--ok)}.kpi span{font-size:.75rem;color:var(--muted)}.timeline{display:grid;gap:10px;margin-top:12px}.event{border-left:2px solid var(--blue);padding-left:12px}.event b{font-size:.82rem}.event p{margin:2px 0;color:var(--muted);font-size:.78rem}.preview{font-family:ui-monospace,Consolas,monospace;background:#071015;border:1px dashed #31505d;border-radius:12px;padding:14px;white-space:pre-wrap;color:#cfe2e6;min-height:180px}.hint{font-size:.75rem;color:var(--muted);margin-top:10px}.tag{display:inline-block;padding:5px 8px;border-radius:999px;background:#14252d;color:#bcd0d5;font-size:.7rem;margin:3px 4px 0 0}.foot{padding:25px 0;color:var(--muted);font-size:.75rem;border-top:1px solid var(--line)}@media(max-width:850px){.grid{grid-template-columns:1fr}.form-grid,.people{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand">LUVANN <span>FIREOPS</span></div><div class="badge">PROTOTIPO · PARTE DIGITAL</div></div></header>
+<main class="wrap">
+<section class="hero"><div class="badge">CASO PILOTO · BOMBEROS</div><h1>Parte de asistencia<br>convertido en sistema.</h1><p>Prototipo funcional sin backend. Simula captura estructurada de una emergencia, asistencia del personal y generación de un resumen operacional.</p></section>
+<div class="grid">
+<section class="card">
+<div class="section-title"><h2>1. Datos de la emergencia</h2><small>ID automático</small></div>
+<div class="form-grid">
+<div class="field"><label>ID de emergencia</label><input id="id" value="2CBT-2026-00184" readonly></div>
+<div class="field"><label>Fecha y hora</label><input id="fecha" type="datetime-local"></div>
+<div class="field"><label>Clave / tipo de emergencia</label><select id="tipo"><option>Incendio estructural</option><option>Rescate</option><option>Emergencia vehicular</option><option>Material peligroso</option><option>Apoyo / servicio</option></select></div>
+<div class="field"><label>OBAC a cargo</label><input id="obac" placeholder="Ej: Capitán de compañía"></div>
+<div class="field full"><label>Dirección</label><input id="direccion" placeholder="Ej: Avenida Central 123"></div>
+<div class="field full"><label>Descripción de la emergencia</label><textarea id="descripcion" placeholder="Descripción breve y objetiva de la situación encontrada"></textarea></div>
+</div>
+
+<div class="section-title" style="margin-top:22px"><h2>2. Instituciones concurrentes</h2><small>Registro estructurado</small></div>
+<div class="form-grid">
+<div class="field"><label>Carabineros</label><input id="carab" placeholder="Unidad / responsable"></div>
+<div class="field"><label>Salud / Ambulancia</label><input id="salud" placeholder="SAMU / unidad / responsable"></div>
+<div class="field"><label>Otros organismos</label><input id="otros" placeholder="Municipalidad, empresa, etc."></div>
+<div class="field"><label>Unidad bomberil</label><select id="unidad"><option>B-2</option><option>RX-2</option><option>R-2</option><option>UT-2</option></select></div>
+</div>
+
+<div class="section-title" style="margin-top:22px"><h2>3. Asistencia</h2><small>Datos ficticios para demo</small></div>
+<div class="people">
+<label class="person"><input class="asistencia" type="checkbox" checked data-name="Voluntario Demo 01"><span>Voluntario Demo 01</span><span class="status">ASISTIÓ</span></label>
+<label class="person"><input class="asistencia" type="checkbox" checked data-name="Voluntario Demo 02"><span>Voluntario Demo 02</span><span class="status">ASISTIÓ</span></label>
+<label class="person"><input class="asistencia" type="checkbox" data-name="Voluntario Demo 03"><span>Voluntario Demo 03</span><span class="status">DISPONIBLE</span></label>
+<label class="person"><input class="asistencia" type="checkbox" checked data-name="Voluntario Demo 04"><span>Voluntario Demo 04</span><span class="status">ASISTIÓ</span></label>
+<label class="person"><input class="asistencia" type="checkbox" data-name="Voluntario Demo 05"><span>Voluntario Demo 05</span><span class="status">DISPONIBLE</span></label>
+<label class="person"><input class="asistencia" type="checkbox" checked data-name="Voluntario Demo 06"><span>Voluntario Demo 06</span><span class="status">ASISTIÓ</span></label>
+</div>
+
+<div class="section-title" style="margin-top:22px"><h2>4. Cierre</h2><small>Material y observaciones</small></div>
+<div class="form-grid"><div class="field full"><label>Material menor utilizado</label><input id="material" placeholder="Ej: 2 líneas, pitón, ERA, herramientas"></div><div class="field full"><label>Observaciones</label><textarea id="obs" placeholder="Observaciones de cierre"></textarea></div></div>
+<div class="btns"><button class="btn secondary" onclick="cargarDemo()">Cargar ejemplo</button><button class="btn primary" onclick="generar()">Generar parte</button><button class="btn success" onclick="cerrarParte()">Cerrar y validar</button></div>
+<p class="hint">Este prototipo no almacena datos reales. La versión productiva requeriría autenticación, base de datos, permisos y trazabilidad.</p>
+</section>
+
+<aside>
+<section class="card"><div class="section-title"><h2>Resumen operativo</h2><small>En tiempo real</small></div><div class="kpis"><div class="kpi"><strong id="kAsis">4</strong><span>asistentes</span></div><div class="kpi"><strong id="kUnidad">B-2</strong><span>unidad</span></div><div class="kpi"><strong id="kEstado">BORRADOR</strong><span>estado</span></div><div class="kpi"><strong id="kInst">0</strong><span>instituciones</span></div></div></section>
+<section class="card" style="margin-top:18px"><h2>Flujo digital</h2><div class="timeline"><div class="event"><b>1 · Registro</b><p>Datos de emergencia y personal.</p></div><div class="event"><b>2 · Validación</b><p>Revisión por OBAC / responsable.</p></div><div class="event"><b>3 · Cierre</b><p>Parte queda bloqueado y trazable.</p></div><div class="event"><b>4 · Analítica</b><p>Actualiza asistencia, estadísticas y dashboard.</p></div></div></section>
+<section class="card" style="margin-top:18px"><div class="section-title"><h2>Vista previa del parte</h2><small>Simulación</small></div><div id="preview" class="preview">Completa el formulario y pulsa “Generar parte”.</div><div><span class="tag">Trazabilidad</span><span class="tag">Asistencia</span><span class="tag">Dashboard</span><span class="tag">PDF futuro</span></div></section>
+</aside>
+</div>
+</main>
+<footer class="foot"><div class="wrap">Luvann FireOps · Prototipo demostrativo de transformación digital de procesos operacionales.</div></footer>
+<script>
+const now=new Date(); document.getElementById('fecha').value=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16);
+function asistentes(){return [...document.querySelectorAll('.asistencia:checked')].map(x=>x.dataset.name)}
+function contarInst(){return ['carab','salud','otros'].filter(id=>document.getElementById(id).value.trim()).length}
+function sync(){document.getElementById('kAsis').textContent=asistentes().length;document.getElementById('kUnidad').textContent=document.getElementById('unidad').value;document.getElementById('kInst').textContent=contarInst()}
+document.querySelectorAll('input,select,textarea').forEach(x=>x.addEventListener('input',sync));document.querySelectorAll('.asistencia').forEach(x=>x.addEventListener('change',sync));
+function cargarDemo(){document.getElementById('obac').value='Capitán Demo';document.getElementById('direccion').value='Av. Costanera 245';document.getElementById('descripcion').value='Principio de incendio en dependencia comercial. Fuego controlado por primera unidad, sin lesionados.';document.getElementById('carab').value='Patrulla territorial';document.getElementById('salud').value='Ambulancia de apoyo';document.getElementById('material').value='1 línea de ataque, pitón, ERA y herramienta manual';document.getElementById('obs').value='Situación controlada. Se entrega el lugar al responsable.';sync();generar()}
+function generar(){sync();const a=asistentes();document.getElementById('preview').textContent=`PARTE DIGITAL · ${document.getElementById('id').value}\n\nFecha: ${document.getElementById('fecha').value.replace('T',' ')}\nTipo: ${document.getElementById('tipo').value}\nOBAC: ${document.getElementById('obac').value||'—'}\nDirección: ${document.getElementById('direccion').value||'—'}\nUnidad: ${document.getElementById('unidad').value}\n\nAsistencia (${a.length}): ${a.join(', ')||'—'}\n\nCarabineros: ${document.getElementById('carab').value||'—'}\nSalud: ${document.getElementById('salud').value||'—'}\nOtros: ${document.getElementById('otros').value||'—'}\n\nDescripción: ${document.getElementById('descripcion').value||'—'}\nMaterial: ${document.getElementById('material').value||'—'}\nObservaciones: ${document.getElementById('obs').value||'—'}\n\nEstado: ${document.getElementById('kEstado').textContent}`}
+function cerrarParte(){document.getElementById('kEstado').textContent='VALIDADO';generar();alert('Demo: parte validado. En producción aquí se guardaría en base de datos, quedaría trazabilidad y se generaría el PDF oficial.')}
+sync();
+</script>
+</body></html>
